@@ -1,0 +1,34 @@
+--> sudo apt-get update
+
+--> java --version
+
+--> wget -q -O - https://jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+
+--> sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+--> sudo apt-get update
+
+--> sudo apt-get install jenkins 
+
+--> Run sudo service jenkins status
+
+
+	Cntr + Z	to exit from the process 
+
+--> sudo systemctl start jenkins
+
+--> sudo systemctl status jenkins
+		
+
+open the browser and hit url as http://localhost:8080
+
+if it ask password then hit this command to get the password 
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+copy the password and install the suggested plugin 
+
+else 
+
+if it ask username and password then name is admin and password is admin. 
+

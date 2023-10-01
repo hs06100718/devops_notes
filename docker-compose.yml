@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  my-first-container:
+    image: nginx
+    ports:
+      - 80:80
+  my-another-container:
+    image: akashkale/my-web:1.0
+    ports:
+      - 81:80

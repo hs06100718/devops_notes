@@ -1,0 +1,100 @@
+Docker Installation 
+
+https://www.docker.com/products/docker-desktop/
+
+Minikube installation 
+
+
+https://minikube.sigs.k8s.io/docs/start/
+
+Kubectl 
+
+.exe 
+
+https://medium.com/@ggauravsigra/install-kubectl-on-windows-af77da2e6fff
+
+
+https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/
+
+next class 
+
+docker --version 
+docker-compose version 
+minikube version		in VM Kubeadm 		Cluster can be minikube or kubeadm 
+kubectl version 
+
+
+
+----------------------------------------------------------------------------------------------------------
+
+
+
+Install Docker compose in VM (Ubuntu)
+
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+docker-compose --version
+
+
+
+----------------------------------------------------------------------------------------------
+
+docker --version 
+docker images 
+
+sudo systemctl status docker
+
+sudo systemctl restart docker
+
+sudo systemctl stop docker
+
+sudo systemctl start docker
+
+sudo systemctl daemon-reload
+
+
+sudo systemctl restart docker
+
+
+-------------------------------------------------------------------------------------
+
+kubectl version 
+
+sudo kubeadm version 
+
+
+sudo kubeadm init 
+
+
+sudo kubeadm init 
+
+
+After that you will get 
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+
+kubeadm join 172.31.16.158:6443 --token hov5u9.ig7wikywphbd08q0 --discovery-token-ca-cert-hash sha256:8cbf0a1414a0c83e7da928861efc2847968614d23600a8aa934801a30fee2fbf
+
+kubeadm join 172.31.23.41:6443 --token b7kkv4.m0uzwxf11to409x9  --discovery-token-ca-cert-hash sha256:d567ec9703c4e13c16b1c7c51267d73e367c803319b59abd57843575ef2dd4d0 
+
+
+Kubenetes reset commands 
+
+sudo kubeadm reset
+sudo rm -rf /etc/kubernetes /var/lib/kubelet /var/lib/etcd /etc/cni/net.d
+rm -rf $HOME/.kube/config
+rm -rf $HOME/etc/cni/net.d
+sudo kubeadm init 
+
+
+sudo kill -9 $(sudo lsof -t -i:10250)		kill port number 
+
+sudo su 
+swapoff -a
+
